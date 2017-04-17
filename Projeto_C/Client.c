@@ -15,9 +15,35 @@ Client createClient(char * name, char * surname, int age)
     return client;
 }
 
-void leClientesDeFicheiro()
+void imprimeCliente(Client cliente)
 {
-    //ListaClientes lista;
+        printf("Numero: %d\nNome: %s\nApelido: %s\nIdade: %d\nPontos: %d\n", cliente.id, cliente.name, cliente.surname, cliente.age, cliente.pontos);
+}
+
+ListaClientes leClientesDeFicheiro()
+{
+    ListaClientes lista;
+    char linha[100];
+    char** tokens;
+    FILE *f = fopen("clientes.txt", "r");
+    int counter = getNumberClients();
+    lista.clientes = (Client *)malloc(counter*sizeof(Client));
+    lista.contagem = counter;
+    int i = 0;
+    while(fgets(linha, sizeof(linha), f))
+    {
+        if(strlen(linha) <= 1) continue;
+        tokens = split(linha, 4, " ");
+        lista.clientes[i] = createClient(tokens[1], tokens[2], atoi(tokens[3]));
+        lista.clientes[i].id = atoi(tokens[0]);
+        i++;
+    }
+    return lista;
+    
+}
+
+int getNumberClients()
+{
     char linha[100];
     char** tokens;
     FILE *f = fopen("clientes.txt", "r");
@@ -26,13 +52,9 @@ void leClientesDeFicheiro()
     {
         if(strlen(linha) <= 1) continue;
         tokens = split(linha, 4, " ");
-      //  lista.clientes[counter] = createClient(tokens[1], tokens[2], (int)tokens[3]);
-       // lista.clientes[counter].id = (int)tokens[0];
-        //counter++;
-        printf("Numero: %s\nNome: %s\nApelido: %s\nIdade: %s\n", tokens[0], tokens[1], tokens[2], tokens[3]);
+        counter++;
     }
-    //lista.contagem = counter;
-    
+    return counter;
 }
 
 char** split(char *string, int nFields, const char *delim)

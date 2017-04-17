@@ -14,7 +14,11 @@
  */
 int main(int argc, char** argv) {
 
-    leClientesDeFicheiro();
+    ListaClientes lista = leClientesDeFicheiro();
+    for(int i = 0; i < lista.contagem;i++)
+    {
+        imprimeCliente(lista.clientes[i]);
+    }
     return (EXIT_SUCCESS);
 }
 

@@ -66,27 +66,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/projeto_c.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/projeto_c ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Client.o: Client.c 
+${OBJECTDIR}/Client.o: Client.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Client.o Client.c
 
-${OBJECTDIR}/Data.o: Data.c 
+${OBJECTDIR}/Data.o: Data.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Data.o Data.c
 
-${OBJECTDIR}/Prato.o: Prato.c 
+${OBJECTDIR}/Prato.o: Prato.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Prato.o Prato.c
 
-${OBJECTDIR}/main.o: main.c 
+${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
 
-${OBJECTDIR}/stackPratos.o: stackPratos.c 
+${OBJECTDIR}/stackPratos.o: stackPratos.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/stackPratos.o stackPratos.c
@@ -97,7 +97,6 @@ ${OBJECTDIR}/stackPratos.o: stackPratos.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/projeto_c.exe
 
 # Subprojects
 .clean-subprojects:

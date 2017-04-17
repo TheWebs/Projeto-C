@@ -24,12 +24,14 @@ typedef struct Client {
 
 typedef struct ListaClientes {
     int contagem;
-    Client clientes[100];
+    Client *clientes;
 }ListaClientes;
 
 Client createClient(char * name, char * surname, int age);
 char** split(char *string, int nFields, const char *delim);
-void leClientesDeFicheiro();
+ListaClientes leClientesDeFicheiro();
+void imprimeCliente(Client cliente);
+int getNumberClients();
 
 #endif	/* CLIENT_H */
 

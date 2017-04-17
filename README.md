@@ -1,6 +1,6 @@
 # Projeto-C
 Projeto desenvolvido para a disciplina de ATAD. Simular um restaurante de sushi chamado "Sushi Magico".
-#Estruturas
+# Estruturas
 * Data - ![Progress](http://progressed.io/bar/100)   
 * Client - ![Progress](http://progressed.io/bar/60)   
 * Meal - ![Progress](http://progressed.io/bar/5)   
